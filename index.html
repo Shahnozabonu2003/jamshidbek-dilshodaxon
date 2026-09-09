@@ -147,7 +147,6 @@
     </section>
 
 
-    <!-- LOCATION -->
 <!-- LOCATION -->
 <section class="location" id="location">
 
@@ -170,6 +169,19 @@
             Qayqi qishlog‘i
         </p>
 
+        <!-- MAP -->
+        <div class="map-card">
+
+            <iframe
+                src="https://www.google.com/maps?q=Shodiyona+To'yxonasi,+Qayqi,+Uchqo'rg'on,+Namangan&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+            ></iframe>
+
+        </div>
+
+        <!-- MAP BUTTON -->
         <a
             href="https://maps.app.goo.gl/BpcFcTUp5116Pe5u5?g_st=it"
             target="_blank"
@@ -203,9 +215,9 @@
             va tashrifingizni tasdiqlang.
         </p>
 
-        <!-- NAME -->
         <div class="rsvp-form">
 
+            <!-- NAME -->
             <input
                 type="text"
                 id="guestName"
@@ -214,10 +226,20 @@
                 autocomplete="name"
             >
 
+            <!-- WISH -->
+            <textarea
+                id="guestWish"
+                class="guest-wish"
+                placeholder="Tilagingizni yozing..."
+                rows="4"
+            ></textarea>
+
+            <!-- QUESTION -->
             <p class="rsvp-question">
                 TO‘YIMIZGA TASHRIF BUYURASIZMI?
             </p>
 
+            <!-- RESPONSE -->
             <div class="rsvp-buttons">
 
                 <button
@@ -240,14 +262,16 @@
 
             </div>
 
-            <p class="rsvp-message" id="rsvpMessage"></p>
+            <p
+                class="rsvp-message"
+                id="rsvpMessage"
+            ></p>
 
         </div>
 
     </div>
 
 </section>
-
 
     <!-- FINAL -->
     <section class="final" id="final">

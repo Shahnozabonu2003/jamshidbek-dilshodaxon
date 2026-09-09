@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -11,21 +16,22 @@ html {
 }
 
 body {
-    background: #f8f7f3;
-    color: #4c5149;
+    background: #edf2f8;
+    color: #555d54;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     overflow-x: hidden;
 }
 
-/* =========================
-   COMMON
-========================= */
-
 section {
     width: 100%;
     position: relative;
 }
+
+
+/* =========================
+   COMMON
+========================= */
 
 .section-inner {
     width: 100%;
@@ -36,52 +42,48 @@ section {
 }
 
 .section-label {
-    font-size: 9px;
+    margin-bottom: 20px;
+
+    font-size: 8px;
+    font-weight: 400;
     letter-spacing: 4px;
-    color: #8b917f;
-    margin-bottom: 18px;
+
+    color: #999d93;
 }
 
 h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    line-height: 1;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: #555b50;
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(37px, 9.5vw, 47px);
+    line-height: 0.96;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+
+    color: #4f5950;
 }
 
-.decorative-line {
-    width: 55px;
-    height: 1px;
-    background: #b7a878;
-    margin: 25px auto;
-}
 
-/* =========================
-   HERO
-========================= */
 /* =========================
    HERO
 ========================= */
 
 .hero {
+    position: relative;
+
+    width: 100%;
     height: 100svh;
     min-height: 680px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #f8f7f3;
+    overflow: hidden;
+
+    background: #f8f6ef;
 }
 
-/* =========================
-   HERO VIDEO
-========================= */
+
+/* VIDEO */
 
 .hero-video {
     position: absolute;
@@ -98,10 +100,8 @@ h2 {
 }
 
 
-
-
 /* =========================
-   TOP CONTROLS
+   LANGUAGE
 ========================= */
 
 .language-switch {
@@ -116,21 +116,22 @@ h2 {
 
     padding: 7px 10px;
 
-    background: rgba(255, 255, 255, 0.80);
+    background: rgba(255, 255, 255, 0.82);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 
-    border: 1px solid rgba(183, 168, 120, 0.55);
+    border: 1px solid rgba(183, 168, 120, 0.5);
     border-radius: 20px;
 
-    box-shadow: 0 4px 15px rgba(80, 75, 60, 0.08);
+    box-shadow:
+        0 4px 15px rgba(80, 75, 60, 0.08);
 
     z-index: 50;
 }
 
 .language-switch span {
-    color: #b5b1a6;
+    color: #b7b3a8;
     font-size: 8px;
 }
 
@@ -142,6 +143,7 @@ h2 {
 
     font-family: 'Montserrat', sans-serif;
     font-size: 8px;
+    font-weight: 300;
     letter-spacing: 1.2px;
 
     color: #8d9188;
@@ -154,12 +156,12 @@ h2 {
     font-weight: 500;
 }
 
+
 /* =========================
-   MUSIC BUTTON
+   MUSIC
 ========================= */
 
-
- .music-button {
+.music-button {
     position: absolute;
 
     top: 23px;
@@ -172,30 +174,31 @@ h2 {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(183, 168, 120, 0.55);
+    border: 1px solid rgba(183, 168, 120, 0.5);
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.80);
+    background: rgba(255, 255, 255, 0.82);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 
     color: #62695d;
-
     font-size: 13px;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 15px rgba(80, 75, 60, 0.08);
+    box-shadow:
+        0 4px 15px rgba(80, 75, 60, 0.08);
 
     z-index: 50;
 
-    transition: 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .music-button:active {
     transform: scale(0.94);
 }
+
 
 /* =========================
    HERO CONTENT
@@ -213,43 +216,44 @@ h2 {
 
     transform: translateY(5px);
 }
+
 .hero-small {
     margin-bottom: 28px;
 
     font-size: 8px;
+    font-weight: 400;
     letter-spacing: 4px;
 
-    color: #899083;
+    color: #858c82;
 }
 
 .hero h1 {
-    max-width: 360px;
+    max-width: 380px;
     margin: 0 auto;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Bodoni Moda', serif;
 
-    font-size: clamp(40px, 11vw, 58px);
+    font-size: clamp(41px, 11vw, 60px);
     line-height: 0.9;
 
-    font-weight: 500;
-
+    font-weight: 400;
     letter-spacing: 0;
 
-    color: #596255;
+    color: #4f5950;
 }
 
 .hero h1 span {
     display: block;
 
-    margin: 9px 0;
+    margin: 10px 0;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 25px;
     line-height: 1;
 
     font-weight: 400;
 
-    color: #b2a786;
+    color: #aa9a6e;
 }
 
 .hero-line {
@@ -258,20 +262,20 @@ h2 {
 
     margin: 27px auto 18px;
 
-    background: #b5a878;
+    background: #b4a16d;
 }
 
 .hero-date {
     font-size: 9px;
-
+    font-weight: 500;
     letter-spacing: 5px;
 
-    color: #697064;
+    color: #555d52;
 }
 
 
 /* =========================
-   SCROLL DOWN
+   SCROLL
 ========================= */
 
 .scroll-down {
@@ -291,7 +295,6 @@ h2 {
     z-index: 10;
 
     font-size: 7px;
-
     letter-spacing: 3px;
 
     color: #8d9389;
@@ -301,12 +304,11 @@ h2 {
     font-size: 14px;
     line-height: 1;
 }
-/* =========================
 
+
+/* =========================
    INVITATION
 ========================= */
-
-
 
 .invitation {
     background: #f8f7f3;
@@ -326,43 +328,37 @@ h2 {
 
 .invitation .section-label {
     margin-bottom: 22px;
-
-    font-size: 8px;
-    letter-spacing: 4px;
-
-    color: #9b9f96;
 }
 
 .invitation h2 {
     max-width: 380px;
 
-    font-size: clamp(35px, 9.5vw, 43px);
-    line-height: 0.96;
+    font-size: clamp(37px, 9.5vw, 46px);
 
-    letter-spacing: 0.5px;
-
-    color: #586154;
+    color: #4f5950;
 }
 
-.invitation .decorative-line {
+.decorative-line {
     width: 55px;
     height: 1px;
 
-    margin: 27px auto 27px;
+    margin: 27px auto;
 
     background: #b8a97c;
 }
 
 .invitation-text {
     max-width: 325px;
-
     margin: 0 auto;
 
     font-size: 11px;
     line-height: 2.05;
 
-    color: #92968e;
+    color: #858b83;
 }
+
+
+/* DATE */
 
 .invitation-date {
     margin: 45px auto 0;
@@ -375,14 +371,14 @@ h2 {
 }
 
 .invitation-date > span {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Bodoni Moda', serif;
 
     font-size: 64px;
     line-height: 0.75;
 
-    font-weight: 400;
+    font-weight: 500;
 
-    color: #a8a084;
+    color: #8f835f;
 }
 
 .invitation-date div {
@@ -395,24 +391,24 @@ h2 {
 
 .invitation-date small {
     font-size: 8px;
+    font-weight: 500;
     letter-spacing: 4px;
 
-    color: #aaa69a;
+    color: #8f8875;
 }
 
 .invitation-date strong {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Bodoni Moda', serif;
 
     font-size: 22px;
     line-height: 1;
 
     font-weight: 500;
 
-    color: #596154;
+    color: #4f574c;
 }
-/* =========================
-   COUNTDOWN
-========================= */
+
+
 /* =========================
    COUNTDOWN
 ========================= */
@@ -425,29 +421,15 @@ h2 {
     padding: 75px 22px 80px;
 }
 
-/* BIZNING KUNIMIZ */
 .countdown-section .section-label {
     margin-bottom: 20px;
-
-    font-size: 8px;
-    letter-spacing: 4px;
-
-    color: #9a9e93;
 }
 
-/* TO‘YIMIZGA QOLDI */
 .countdown-section h2 {
-    font-family: 'Cormorant Garamond', serif;
     font-size: clamp(39px, 10vw, 48px);
-    line-height: 0.95;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #555d52;
+    color: #4f5950;
 }
 
- 
-
-/* COUNTDOWN ROW */
 .countdown {
     width: 100%;
     max-width: 390px;
@@ -456,6 +438,7 @@ h2 {
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     gap: 10px;
 }
 
@@ -465,7 +448,6 @@ h2 {
     align-items: center;
 }
 
-/* GOLD CIRCLES */
 .count-box strong {
     width: 70px;
     height: 70px;
@@ -477,12 +459,13 @@ h2 {
     border: 1px solid rgba(178, 151, 91, 0.75);
     border-radius: 50%;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 31px;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 30px;
     line-height: 1;
+
     font-weight: 500;
 
-    color: #596054;
+    color: #4f574c;
 
     background: rgba(255, 255, 255, 0.22);
 
@@ -491,33 +474,36 @@ h2 {
         0 4px 15px rgba(104, 91, 60, 0.04);
 }
 
-/* KUN / SOAT / DAQIQA / SONIYA */
 .count-box span {
     margin-top: 12px;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 7px;
-    font-weight: 400;
+    font-weight: 500;
 
     letter-spacing: 2px;
 
-    color: #999d92;
+    color: #777d72;
 }
+
+
 /* =========================
    LOCATION
 ========================= */
 
-
 .location {
     position: relative;
-
-    height: 680px;
-    min-height: 680px;
-
+    width: 100%;
+    min-height: 850px;
     overflow: hidden;
-
     background: #f4efe5;
 }
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
 .location-bg {
     position: absolute;
     inset: 0;
@@ -533,10 +519,8 @@ h2 {
     z-index: 0;
 }
 
-/* Soft white veil over the photo */
 .location-bg::after {
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -545,104 +529,189 @@ h2 {
     z-index: 1;
 }
 
+
+/* =========================
+   CONTENT
+========================= */
+
 .location-content {
     position: relative;
     z-index: 5;
 
-    height: 680px;
+    min-height: 850px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
-    padding: 60px 28px;
+    padding: 70px 20px 65px;
 
     text-align: center;
 }
 
-/* Soft organic wave behind the text */
-.location-content::before {
+
+/* =========================
+   LABEL
+========================= */
+
+.location .section-label {
+    margin-bottom: 18px;
+
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 4px;
+
+    color: #858c82;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.location h2 {
+    max-width: 360px;
+
+    margin: 0 auto;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(39px, 10vw, 48px);
+    line-height: 0.94;
+
+    font-weight: 400;
+    letter-spacing: 0;
+
+    color: #4f5950;
+
+    text-shadow:
+        0 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================
+   ADDRESS
+   FAQAT SHU YERDA OQ FON
+========================= */
+
+.location-address {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 30px auto 28px;
+
+    padding: 18px 34px;
+
+    font-size: 10px;
+    line-height: 2;
+
+    font-weight: 500;
+
+    color: #596154;
+
+    text-shadow: none;
+
+    z-index: 2;
+}
+
+
+/* OVAL BACKGROUND */
+
+.location-address::before {
     content: "";
 
     position: absolute;
 
-    width: 370px;
-    height: 330px;
-
-    top: 175px;
+    top: 50%;
     left: 50%;
 
-    transform: translateX(-50%);
+    width: 285px;
+    height: 115px;
 
-    background: rgba(250, 247, 239, 0.78);
+    transform: translate(-50%, -50%);
 
-    border-radius:
-        48% 52% 45% 55%
-        / 52% 43% 57% 48%;
+    background: rgba(250, 248, 241, 0.88);
 
-    filter: blur(0.2px);
+    border-radius: 50%;
+
+    box-shadow:
+        0 4px 18px rgba(90, 85, 70, 0.04);
 
     z-index: -1;
 }
-.location .section-label {
-    margin-bottom: 22px;
 
-    font-size: 8px;
-    letter-spacing: 4px;
 
-    color: #8b9187;
-}
+/* =========================
+   MAP
+========================= */
 
-.location h2 {
+.map-card {
     position: relative;
-    z-index: 2;
 
-    max-width: 350px;
+    width: 100%;
+    max-width: 330px;
+    height: 245px;
 
-    font-size: clamp(38px, 10vw, 46px);
-    line-height: 0.95;
+    margin: 0 auto 18px;
 
-    color: #566054;
+    overflow: hidden;
 
-    text-shadow:
-        0 1px 4px rgba(255, 255, 255, 0.65);
+    background: #f8f7f3;
+
+    border: 1px solid rgba(183, 168, 120, 0.5);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 28px rgba(80, 75, 60, 0.10);
+
+    z-index: 3;
 }
 
-.location-address {
-    margin: 28px auto 32px;
+.map-card iframe {
+    display: block;
 
-    font-size: 11px;
-    line-height: 2.1;
+    width: 100%;
+    height: 100%;
 
-    color: #62695f;
-
-    text-shadow:
-        0 1px 3px rgba(255, 255, 255, 0.7);
+    border: 0;
 }
+
+
+/* =========================
+   MAP BUTTON
+========================= */
+
 .map-button {
+    width: 190px;
+    min-height: 50px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 10px;
 
-    min-width: 190px;
-    padding: 15px 22px;
+    border: 1px solid rgba(140, 145, 128, 0.75);
 
-    border: 1px solid rgba(140, 145, 128, 0.9);
-
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.90);
 
     color: #596154;
 
     text-decoration: none;
 
+    font-family: 'Montserrat', sans-serif;
+
     font-size: 8px;
+    font-weight: 400;
     letter-spacing: 2px;
 
-    box-shadow: 0 5px 20px rgba(70, 70, 60, 0.08);
+    box-shadow:
+        0 5px 20px rgba(70, 70, 60, 0.08);
 
-    transition: 0.3s ease;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
 .map-button span {
@@ -654,6 +723,8 @@ h2 {
 }
 
 
+
+
 /* =========================
    RSVP
 ========================= */
@@ -663,78 +734,145 @@ h2 {
 }
 
 .rsvp .section-inner {
-    padding: 80px 28px 90px;
+    padding: 75px 28px 80px;
 }
 
 .rsvp .section-label {
     margin-bottom: 20px;
-
-    font-size: 8px;
-    letter-spacing: 4px;
-
-    color: #999e93;
 }
 
 .rsvp h2 {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(36px, 9.5vw, 44px);
-    line-height: 0.95;
-
-    font-weight: 400;
-    letter-spacing: 0.5px;
-
-    color: #555d52;
+    font-size: clamp(37px, 9.5vw, 45px);
+    color: #4f5950;
 }
 
 .rsvp-text {
     max-width: 300px;
 
-    margin: 25px auto 35px;
+    margin: 25px auto 30px;
 
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.9;
 
     color: #7d8279;
 }
 
 
-/* BUTTONS */
+/* FORM */
 
-.rsvp-buttons {
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
-
+.rsvp-form {
     width: 100%;
     max-width: 300px;
 
     margin: 0 auto;
 }
 
-.rsvp-button {
-    position: relative;
 
+/* NAME + WISH */
+
+.guest-name,
+.guest-wish {
     width: 100%;
 
-    min-height: 52px;
+    border: 1px solid rgba(157, 163, 143, 0.72);
+
+    background: rgba(255, 255, 255, 0.42);
+
+    color: #596154;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.guest-name {
+    height: 52px;
+
+    padding: 0 18px;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+.guest-wish {
+    min-height: 100px;
+
+    margin-top: 12px;
+
+    padding: 15px 17px;
+
+    resize: none;
+
+    font-size: 10px;
+    line-height: 1.7;
+
+    text-align: left;
+}
+
+.guest-name::placeholder,
+.guest-wish::placeholder {
+    color: #a1a49b;
+}
+
+.guest-name:focus,
+.guest-wish:focus {
+    border-color: #b5a878;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+
+/* QUESTION */
+
+.rsvp-question {
+    margin: 24px auto 14px;
+
+    font-size: 7px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+    line-height: 1.6;
+
+    color: #858b82;
+}
+
+
+/* RESPONSE BUTTONS */
+
+.rsvp-buttons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.rsvp-button {
+    width: 100%;
+    min-height: 50px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 9px;
 
-    border: 1px solid rgba(157, 163, 143, 0.75);
+    border: 1px solid rgba(157, 163, 143, 0.72);
 
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.30);
 
     color: #60675b;
 
     font-family: 'Montserrat', sans-serif;
-
     font-size: 8px;
+    font-weight: 400;
+
     letter-spacing: 2px;
 
     cursor: pointer;
@@ -747,17 +885,13 @@ h2 {
 
 .rsvp-icon {
     font-family: Arial, sans-serif;
-
     font-size: 13px;
 
     color: #a99d78;
 }
 
-
-/* ACTIVE */
-
 .rsvp-button.active {
-    background: #f8f7f3;
+    background: rgba(255, 255, 255, 0.88);
 
     border-color: #b5a878;
 
@@ -772,137 +906,22 @@ h2 {
 .rsvp-button:active {
     transform: scale(0.98);
 }
-/* =========================
-   RSVP FORM
-========================= */
-
-.rsvp-form {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-/* NAME INPUT */
-
-.guest-name {
-    width: 100%;
-
-    height: 52px;
-
-    padding: 0 18px;
-
-    border: 1px solid rgba(157, 163, 143, 0.75);
-
-    background: rgba(255, 255, 255, 0.45);
-
-    color: #596154;
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-
-    text-align: center;
-
-    outline: none;
-
-    transition: 0.25s ease;
-}
-
-.guest-name::placeholder {
-    color: #a1a49b;
-}
-
-.guest-name:focus {
-    border-color: #b5a878;
-
-    background: rgba(255, 255, 255, 0.7);
-}
 
 
-/* QUESTION */
-
-.rsvp-question {
-    margin: 28px auto 15px;
-
-    font-size: 7px;
-    letter-spacing: 2px;
-
-    color: #969b91;
-}
-
-
-/* BUTTONS */
-
-.rsvp-buttons {
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-
-    width: 100%;
-}
-
-.rsvp-button {
-    width: 100%;
-
-    min-height: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    border: 1px solid rgba(157, 163, 143, 0.75);
-
-    background: rgba(255, 255, 255, 0.3);
-
-    color: #60675b;
-
-    font-family: 'Montserrat', sans-serif;
-
-    font-size: 8px;
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
-}
-
-.rsvp-icon {
-    font-size: 13px;
-    color: #a99d78;
-}
-
-.rsvp-button.active {
-    background: rgba(255, 255, 255, 0.85);
-
-    border-color: #b5a878;
-
-    box-shadow: 0 5px 20px rgba(90, 85, 65, 0.06);
-}
-
-.rsvp-button.active .rsvp-icon {
-    color: #9f8d60;
-}
-
-.rsvp-button:active {
-    transform: scale(0.98);
-}
-
-
-/* MESSAGE */
+/* RESPONSE MESSAGE */
 
 .rsvp-message {
     min-height: 20px;
 
-    margin-top: 18px;
+    margin-top: 15px;
 
     font-size: 9px;
     line-height: 1.6;
 
-    color: #7d8379;
+    color: #70776d;
 }
+
+
 /* =========================
    FINAL
 ========================= */
@@ -928,11 +947,28 @@ h2 {
     inset: 0;
 
     background-image: url("assets/invitation-bg.png");
+
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 
     z-index: 0;
+}
+
+.final::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(250,247,239,0.18),
+            rgba(250,247,239,0.30)
+        );
+
+    z-index: 1;
 }
 
 .final .section-inner {
@@ -953,46 +989,44 @@ h2 {
 }
 
 .final-small {
+    margin-bottom: 25px;
+
     font-size: 8px;
+    font-weight: 400;
     letter-spacing: 4px;
 
     color: #858b81;
-
-    margin-bottom: 25px;
 }
 
 .final h2 {
-    max-width: 350px;
+    max-width: 370px;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 11vw, 58px);
 
-    font-size: clamp(42px, 11vw, 55px);
     line-height: 0.88;
 
-    font-weight: 500;
-
-    letter-spacing: 0.5px;
-
-    color: #596255;
+    color: #4f5950;
 }
 
 .final h2 span {
     display: block;
 
-    margin: 8px 0;
+    margin: 9px 0;
 
-    font-size: 28px;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 27px;
 
-    color: #a9a084;
+    color: #a99a72;
 }
 
 .final-date {
     margin-top: 30px;
 
     font-size: 9px;
+    font-weight: 500;
     letter-spacing: 5px;
 
-    color: #70766b;
+    color: #555d52;
 }
 
 .final-line {
@@ -1007,8 +1041,7 @@ h2 {
 .credit {
     display: block;
 
-    max-width: 220px;
-
+    max-width: 230px;
     margin: 0 auto;
 
     font-size: 7px;
@@ -1016,10 +1049,11 @@ h2 {
 
     letter-spacing: 0.5px;
 
-    color: #8f938b;
+    color: #858b82;
 
     text-decoration: none;
 }
+
 
 /* =========================
    TABLET / DESKTOP
@@ -1036,7 +1070,7 @@ h2 {
     }
 
     h2 {
-        font-size: 48px;
+        font-size: 50px;
     }
 
     .hero,
@@ -1044,4 +1078,11 @@ h2 {
         min-height: 100vh;
     }
 
+    .location {
+        min-height: 850px;
+    }
+
+    .location-content {
+        min-height: 850px;
+    }
 }

@@ -118,7 +118,7 @@ const translations = {
         finalSmall: "SIZNI KUTIB QOLAMIZ",
 
         credit:
-            "Taklifnoma Onlayn Taklifnoma tomonidan tayyorlandi"
+            "Onlayn Taklifnoma tomonidan tayyorlandi"
     },
 
     ru: {
@@ -336,10 +336,13 @@ langButtons.forEach(button => {
 changeLanguage("uz");
 
 // =========================
-// RSVP → CLOUDFLARE → TELEGRAM
+// RSVP + WISH
+// CLOUDFLARE → TELEGRAM
 // =========================
 
 const guestName = document.getElementById("guestName");
+const guestWish = document.getElementById("guestWish");
+
 const rsvpButtons = document.querySelectorAll(".rsvp-button");
 const rsvpMessage = document.getElementById("rsvpMessage");
 
@@ -352,7 +355,9 @@ rsvpButtons.forEach(button => {
     button.addEventListener("click", async () => {
 
         const name = guestName.value.trim();
+        const wish = guestWish.value.trim();
 
+        // ISM
         if (!name) {
 
             guestName.focus();
@@ -363,12 +368,22 @@ rsvpButtons.forEach(button => {
             return;
         }
 
+        // TILAK
+        if (!wish) {
+
+            guestWish.focus();
+
+            rsvpMessage.textContent =
+                "Avval tilagingizni yozing.";
+
+            return;
+        }
 
         const response =
             button.dataset.response;
 
 
-        // Tugmani belgilash
+        // ACTIVE BUTTON
         rsvpButtons.forEach(btn => {
             btn.classList.remove("active");
         });
@@ -376,7 +391,7 @@ rsvpButtons.forEach(button => {
         button.classList.add("active");
 
 
-        // Yuklanayotgan holat
+        // LOADING
         rsvpMessage.textContent =
             "Javobingiz yuborilmoqda...";
 
@@ -394,7 +409,8 @@ rsvpButtons.forEach(button => {
 
                     body: JSON.stringify({
                         name: name,
-                        response: response
+                        response: response,
+                        wish: wish
                     })
                 }
             );
@@ -414,7 +430,11 @@ rsvpButtons.forEach(button => {
 
                     rsvpMessage.textContent =
                         `Rahmat, ${name}! 🤍 Javobingiz qabul qilindi.`;
+
                 }
+
+                guestName.value = "";
+                guestWish.value = "";
 
             } else {
 
