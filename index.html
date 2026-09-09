@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jamshidbek & Dilshodaxon</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+    <audio id="weddingMusic" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- HERO -->
+<!-- HERO -->
+<section class="hero" id="hero">
+
+    <!-- ANIMATED BACKGROUND -->
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+
+    <!-- LANGUAGE -->
+    <div class="language-switch">
+        <button class="lang active" data-lang="uz">UZ</button>
+        <span>|</span>
+        <button class="lang" data-lang="ru">RU</button>
+        <span>|</span>
+        <button class="lang" data-lang="en">EN</button>
+    </div>
+
+    <!-- MUSIC -->
+    <button class="music-button" id="musicButton">
+        ♫
+    </button>
+
+    <!-- HERO TEXT -->
+    <div class="hero-content">
+
+        <p class="hero-small">
+            BIZNING TO‘YIMIZ
+        </p>
+
+        <h1>
+            JAMSHIDBEK
+            <span>&</span>
+            DILSHODAXON
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-date">
+            11.10.2026
+        </p>
+
+    </div>
+
+    <!-- SCROLL -->
+    <div class="scroll-down">
+        <span>SCROLL</span>
+        <span>↓</span>
+    </div>
+
+</section>
+
+
+    <!-- INVITATION -->
+    <section class="invitation" id="invitation">
+
+        <div class="section-inner">
+
+            <p class="section-label">
+                TAKLIF
+            </p>
+
+            <h2>
+                SIZNI TO‘YIMIZGA<br>
+                TAKLIF QILAMIZ
+            </h2>
+
+            <div class="decorative-line"></div>
+
+            <p class="invitation-text">
+                Hayotimizdagi eng go‘zal kunlardan birini
+                siz bilan birga nishonlashdan mamnun bo‘lamiz.
+                Ushbu quvonchli kunimizda sizni aziz mehmonimiz
+                sifatida kutib qolamiz.
+            </p>
+
+            <div class="invitation-date">
+                <span>11</span>
+                <div>
+                    <small>OKTABR</small>
+                    <strong>2026</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section" id="countdown">
+
+        <div class="section-inner">
+
+            <p class="section-label">
+                BIZNING KUNIMIZ
+            </p>
+
+            <h2>
+                TO‘YIMIZGA QOLDI
+            </h2>
+
+            <div class="countdown">
+
+                <div class="count-box">
+                    <strong id="days">00</strong>
+                    <span>KUN</span>
+                </div>
+
+                <div class="count-box">
+                    <strong id="hours">00</strong>
+                    <span>SOAT</span>
+                </div>
+
+                <div class="count-box">
+                    <strong id="minutes">00</strong>
+                    <span>DAQIQA</span>
+                </div>
+
+                <div class="count-box">
+                    <strong id="seconds">00</strong>
+                    <span>SONIYA</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+<!-- LOCATION -->
+<section class="location" id="location">
+
+    <div class="location-bg"></div>
+
+    <div class="location-content">
+
+        <p class="section-label">
+            MANZIL
+        </p>
+
+        <h2>
+            SHODIYONA<br>
+            TO‘YXONASI
+        </h2>
+
+        <p class="location-address">
+            Namangan viloyati,<br>
+            Uchqo‘rg‘on tumani,<br>
+            Qayqi qishlog‘i
+        </p>
+
+        <a
+            href="https://maps.app.goo.gl/BpcFcTUp5116Pe5u5?g_st=it"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-button"
+        >
+            XARITADA KO‘RISH
+            <span>↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- RSVP -->
+<section class="rsvp" id="rsvp">
+
+    <div class="section-inner">
+
+        <p class="section-label">
+            RSVP
+        </p>
+
+        <h2>
+            TASHRIFINGIZNI<br>
+            TASDIQLANG
+        </h2>
+
+        <p class="rsvp-text">
+            Iltimos, ismingizni kiriting
+            va tashrifingizni tasdiqlang.
+        </p>
+
+        <!-- NAME -->
+        <div class="rsvp-form">
+
+            <input
+                type="text"
+                id="guestName"
+                class="guest-name"
+                placeholder="Ismingiz"
+                autocomplete="name"
+            >
+
+            <p class="rsvp-question">
+                TO‘YIMIZGA TASHRIF BUYURASIZMI?
+            </p>
+
+            <div class="rsvp-buttons">
+
+                <button
+                    type="button"
+                    class="rsvp-button"
+                    data-response="KELAMAN"
+                >
+                    <span class="rsvp-icon">✓</span>
+                    KELAMAN
+                </button>
+
+                <button
+                    type="button"
+                    class="rsvp-button"
+                    data-response="KELA OLMAYMAN"
+                >
+                    <span class="rsvp-icon">×</span>
+                    KELA OLMAYMAN
+                </button>
+
+            </div>
+
+            <p class="rsvp-message" id="rsvpMessage"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- FINAL -->
+    <section class="final" id="final">
+
+        <div class="section-inner">
+
+            <p class="final-small">
+                SIZNI KUTIB QOLAMIZ
+            </p>
+
+            <h2>
+                JAMSHIDBEK
+                <span>&</span>
+                DILSHODAXON
+            </h2>
+
+            <p class="final-date">
+                11.10.2026
+            </p>
+
+            <div class="final-line"></div>
+
+            <a
+                href="https://t.me/onlayntaklifnomaadmin"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="credit"
+            >
+                Onlayn Taklifnoma
+                tomonidan tayyorlandi
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
