@@ -406,7 +406,7 @@ h2 {
 .invitation-date small {
     font-family: 'Montserrat', sans-serif;
 
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 400;
 
     letter-spacing: 3px;
@@ -1142,4 +1142,28 @@ h2 {
 .wish-button:disabled {
     opacity: 0.5;
     cursor: default;
+}
+/* =========================
+   MATCHING ITALIC HEADINGS
+========================= */
+
+.countdown-section h2,
+.location h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+}
+
+/* COUNTDOWN */
+.countdown-section h2 {
+    font-size: clamp(39px, 9.5vw, 52px);
+    line-height: 0.95;
+}
+
+/* LOCATION */
+.location h2 {
+    font-size: clamp(39px, 10vw, 50px);
+    line-height: 0.95;
 }
