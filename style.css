@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
 
 
 /* =========================
@@ -231,13 +231,14 @@ h2 {
     max-width: 380px;
     margin: 0 auto;
 
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
 
-    font-size: clamp(41px, 11vw, 60px);
-    line-height: 0.9;
+    font-size: clamp(42px, 10vw, 54px);
+    line-height: 0.95;
 
-    font-weight: 400;
-    letter-spacing: 0;
+    font-weight: 500;
+    letter-spacing: -0.5px;
 
     color: #4f5950;
 }
@@ -245,10 +246,12 @@ h2 {
 .hero h1 span {
     display: block;
 
-    margin: 10px 0;
+    margin: 8px 0;
 
-    font-family: 'Bodoni Moda', serif;
-    font-size: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+
+    font-size: 32px;
     line-height: 1;
 
     font-weight: 400;
@@ -332,8 +335,16 @@ h2 {
 
 .invitation h2 {
     max-width: 380px;
+    margin: 0 auto;
 
-    font-size: clamp(37px, 9.5vw, 46px);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+
+    font-size: clamp(39px, 9.5vw, 52px);
+    line-height: 0.95;
+
+    font-weight: 500;
+    letter-spacing: -0.5px;
 
     color: #4f5950;
 }
@@ -359,53 +370,59 @@ h2 {
 
 
 /* DATE */
-
 .invitation-date {
-    margin: 45px auto 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 15px;
+    gap: 14px;
+
+    margin-top: 34px;
+
+    white-space: nowrap;
+
+    color: #596154;
 }
 
 .invitation-date > span {
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
 
-    font-size: 64px;
-    line-height: 0.75;
-
-    font-weight: 500;
-
-    color: #8f835f;
-}
-
-.invitation-date div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 3px;
-}
-
-.invitation-date small {
-    font-size: 8px;
-    font-weight: 500;
-    letter-spacing: 4px;
-
-    color: #8f8875;
-}
-
-.invitation-date strong {
-    font-family: 'Bodoni Moda', serif;
-
-    font-size: 22px;
+    font-size: 38px;
     line-height: 1;
 
     font-weight: 500;
 
-    color: #4f574c;
+    color: #aa9a6e;
+}
+
+.invitation-date > div {
+    display: flex;
+    align-items: baseline;
+
+    gap: 10px;
+}
+
+.invitation-date small {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 9px;
+    font-weight: 400;
+
+    letter-spacing: 3px;
+
+    color: #858c82;
+}
+
+.invitation-date strong {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 32px;
+    line-height: 1;
+
+    font-weight: 500;
+
+    color: #4f5950;
 }
 
 
@@ -1085,4 +1102,44 @@ h2 {
     .location-content {
         min-height: 850px;
     }
+}
+.wish-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 190px;
+    height: 48px;
+
+    margin: 16px auto 42px;
+
+    border: 1px solid rgba(170, 154, 110, 0.7);
+
+    background: rgba(255, 255, 255, 0.45);
+
+    color: #596154;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease;
+}
+
+.wish-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.wish-button:active {
+    transform: scale(0.97);
+}
+
+.wish-button:disabled {
+    opacity: 0.5;
+    cursor: default;
 }

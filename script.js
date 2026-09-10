@@ -50,29 +50,102 @@ setInterval(updateCountdown, 1000);
 /* =========================
    MUSIC
 ========================= */
+/* =========================
+   MUSIC
+========================= */
 
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
 
 let isPlaying = false;
 
+
+// MUSIQANI BOSHLASH
+function startMusic() {
+
+    music.play()
+        .then(() => {
+
+            isPlaying = true;
+            musicButton.textContent = "❚❚";
+
+        })
+        .catch(() => {
+
+            // Brauzer autoplayni bloklagan bo‘lsa,
+            // birinchi foydalanuvchi tegishida boshlaymiz.
+
+            const startOnInteraction = () => {
+
+                music.play()
+                    .then(() => {
+
+                        isPlaying = true;
+                        musicButton.textContent = "❚❚";
+
+                    })
+                    .catch(() => {});
+
+                document.removeEventListener(
+                    "touchstart",
+                    startOnInteraction
+                );
+
+                document.removeEventListener(
+                    "click",
+                    startOnInteraction
+                );
+            };
+
+            document.addEventListener(
+                "touchstart",
+                startOnInteraction,
+                { once: true }
+            );
+
+            document.addEventListener(
+                "click",
+                startOnInteraction,
+                { once: true }
+            );
+        });
+}
+
+
+// SAYT OCHILISHI BILAN URINIB KO‘RAMIZ
+startMusic();
+
+
+// MUSIC BUTTON
 musicButton.addEventListener("click", () => {
+
     if (isPlaying) {
+
         music.pause();
+
         musicButton.textContent = "♫";
+
         isPlaying = false;
+
     } else {
+
         music.play()
             .then(() => {
+
                 musicButton.textContent = "❚❚";
+
                 isPlaying = true;
+
             })
             .catch(() => {
-                console.log("Music could not be played.");
+
+                console.log(
+                    "Music could not be played."
+                );
+
             });
     }
 });
-
 
 /* =========================
    LANGUAGE
@@ -337,29 +410,105 @@ changeLanguage("uz");
 
 // =========================
 // RSVP + WISH
-// CLOUDFLARE → TELEGRAM
 // =========================
 
 const guestName = document.getElementById("guestName");
 const guestWish = document.getElementById("guestWish");
 
+const wishButton = document.getElementById("wishButton");
 const rsvpButtons = document.querySelectorAll(".rsvp-button");
 const rsvpMessage = document.getElementById("rsvpMessage");
 
 const rsvpServer =
-    "https://jamshidbek-rsvp.shahnozabonusherqoziyeva.workers.dev/rsvp";
+    "https://jamshidbek-rsvp.shahnozabonusherqoziyeva.workers.dev";
 
+
+// =========================
+// TILAKNI ALOHIDA YUBORISH
+// =========================
+
+wishButton.addEventListener("click", async () => {
+
+    const name = guestName.value.trim();
+    const wish = guestWish.value.trim();
+
+    if (!name) {
+        guestName.focus();
+        rsvpMessage.textContent =
+            "Avval ismingizni kiriting.";
+        return;
+    }
+
+    if (!wish) {
+        guestWish.focus();
+        rsvpMessage.textContent =
+            "Avval tilagingizni yozing.";
+        return;
+    }
+
+    wishButton.disabled = true;
+
+    rsvpMessage.textContent =
+        "Tilagingiz yuborilmoqda...";
+
+    try {
+
+        const result = await fetch(
+            `${rsvpServer}/wish`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name: name,
+                    wish: wish
+                })
+            }
+        );
+
+        const data = await result.json();
+
+        if (data.success) {
+
+            rsvpMessage.textContent =
+                `Rahmat, ${name}! 🤍 Tilagingiz yuborildi.`;
+
+            guestWish.value = "";
+
+        } else {
+
+            rsvpMessage.textContent =
+                "Tilak yuborilmadi. Qayta urinib ko‘ring.";
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        rsvpMessage.textContent =
+            "Xatolik yuz berdi. Internetni tekshirib qayta urinib ko‘ring.";
+
+    } finally {
+
+        wishButton.disabled = false;
+    }
+});
+
+
+// =========================
+// RSVP ALOHIDA YUBORISH
+// =========================
 
 rsvpButtons.forEach(button => {
 
     button.addEventListener("click", async () => {
 
         const name = guestName.value.trim();
-        const wish = guestWish.value.trim();
 
-        // ISM
         if (!name) {
-
             guestName.focus();
 
             rsvpMessage.textContent =
@@ -368,38 +517,22 @@ rsvpButtons.forEach(button => {
             return;
         }
 
-        // TILAK
-        if (!wish) {
-
-            guestWish.focus();
-
-            rsvpMessage.textContent =
-                "Avval tilagingizni yozing.";
-
-            return;
-        }
-
         const response =
             button.dataset.response;
 
-
-        // ACTIVE BUTTON
         rsvpButtons.forEach(btn => {
             btn.classList.remove("active");
         });
 
         button.classList.add("active");
 
-
-        // LOADING
         rsvpMessage.textContent =
             "Javobingiz yuborilmoqda...";
-
 
         try {
 
             const result = await fetch(
-                rsvpServer,
+                `${rsvpServer}/rsvp`,
                 {
                     method: "POST",
 
@@ -409,15 +542,12 @@ rsvpButtons.forEach(button => {
 
                     body: JSON.stringify({
                         name: name,
-                        response: response,
-                        wish: wish
+                        response: response
                     })
                 }
             );
 
-
             const data = await result.json();
-
 
             if (data.success) {
 
@@ -430,27 +560,20 @@ rsvpButtons.forEach(button => {
 
                     rsvpMessage.textContent =
                         `Rahmat, ${name}! 🤍 Javobingiz qabul qilindi.`;
-
                 }
-
-                guestName.value = "";
-                guestWish.value = "";
 
             } else {
 
                 rsvpMessage.textContent =
-                    "Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.";
-
+                    "Javob yuborilmadi. Qayta urinib ko‘ring.";
             }
-
 
         } catch (error) {
 
             console.error(error);
 
             rsvpMessage.textContent =
-                "Javob yuborilmadi. Internetni tekshirib qayta urinib ko‘ring.";
-
+                "Xatolik yuz berdi. Internetni tekshirib qayta urinib ko‘ring.";
         }
 
     });

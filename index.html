@@ -12,9 +12,9 @@
 <body>
 
     <!-- MUSIC -->
-    <audio id="weddingMusic" loop>
-        <source src="assets/music.mp3" type="audio/mpeg">
-    </audio>
+   <audio id="weddingMusic" loop autoplay playsinline>
+    <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
 
     <!-- HERO -->
 <!-- HERO -->
@@ -172,12 +172,13 @@
         <!-- MAP -->
         <div class="map-card">
 
-            <iframe
-                src="https://www.google.com/maps?q=Shodiyona+To'yxonasi,+Qayqi,+Uchqo'rg'on,+Namangan&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-            ></iframe>
+         <iframe
+    src="https://yandex.ru/map-widget/v1/?ll=72.021954%2C41.058841&z=18.51&mode=search&text=Shodiyona%20To%27yxonasi"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    allowfullscreen="true">
+</iframe>
 
         </div>
 
@@ -211,13 +212,12 @@
         </h2>
 
         <p class="rsvp-text">
-            Iltimos, ismingizni kiriting
-            va tashrifingizni tasdiqlang.
+            Sizni ushbu quvonchli kunimizda ko‘rishdan xursand bo‘lamiz.
         </p>
 
         <div class="rsvp-form">
 
-            <!-- NAME -->
+            <!-- ISM -->
             <input
                 type="text"
                 id="guestName"
@@ -226,7 +226,7 @@
                 autocomplete="name"
             >
 
-            <!-- WISH -->
+            <!-- TILAK -->
             <textarea
                 id="guestWish"
                 class="guest-wish"
@@ -234,12 +234,19 @@
                 rows="4"
             ></textarea>
 
-            <!-- QUESTION -->
+            <button
+                type="button"
+                class="wish-button"
+                id="wishButton"
+            >
+                TILAKNI YUBORISH
+            </button>
+
+            <!-- RSVP -->
             <p class="rsvp-question">
                 TO‘YIMIZGA TASHRIF BUYURASIZMI?
             </p>
 
-            <!-- RESPONSE -->
             <div class="rsvp-buttons">
 
                 <button
