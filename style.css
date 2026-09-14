@@ -1167,3 +1167,23 @@ h2 {
     font-size: clamp(39px, 10vw, 50px);
     line-height: 0.95;
 }
+/* ========================= FINAL TYPOGRAPHY BALANCE ========================= */
+/* RSVP katta sarlavhasi */ .rsvp h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
+font-size: clamp(36px, 8.8vw, 48px);
+line-height: 0.95;
+
+letter-spacing: -0.4px;
+}
+/* Tilaklar sarlavhasi */ .wishes-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
+font-size: clamp(36px, 8.8vw, 46px);
+line-height: 1;
+}
+/* RSVP izoh matni */ .rsvp-text { font-size: 10px; line-height: 1.8; }
+/* Tilaklar ostidagi kichik matn */ .wishes-subtitle { font-size: 10px; }
+/* Inputlar */ .wish-modal-box input, .wish-modal-box textarea { font-size: 11px; }
+/* Input placeholder */ .wish-modal-box input::placeholder, .wish-modal-box textarea::placeholder { font-size: 11px; }
+/* Tayyor tilak tugmalari */ .wish-suggestions button { font-size: 8px; line-height: 1.4; }
+/* Modal sarlavhasi */ .wish-modal-box h3 { font-size: 27px; }
+/* RSVP savoli */ .rsvp-question { font-size: 8px; }
+/* RSVP tugmalari */ .rsvp-box .rsvp-button { font-size: 9px; }
+/* Tilak yuborish tugmasi */ .wish-submit-button { font-size: 9px; }
