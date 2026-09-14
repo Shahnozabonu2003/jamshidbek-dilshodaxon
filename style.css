@@ -1212,3 +1212,25 @@ h2 {
         font-size: 38px;
     }
 }
+.hero h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(74px, 13vw, 76px);
+  line-height: 0.9;
+  font-weight: 400;
+  color: #4f5950;
+  letter-spacing: 0;
+}
+
+.hero h1 .name {
+  font-family: 'Alex Brush', cursive;
+}
+
+.hero h1 .ampersand {
+  font-family: 'Alex Brush', cursive;
+  font-size: 0.7em;
+  line-height: 0.8;
+}
