@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500&display=swap');
 
-
-/* =========================
+/* =========================================================
    RESET
-========================= */
-
+========================================================= */
+:root {
+    --font-script: 'Great Vibes', cursive;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-clean: 'Montserrat', sans-serif;
+}
 * {
     margin: 0;
     padding: 0;
@@ -28,10 +31,16 @@ section {
     position: relative;
 }
 
+button,
+input,
+textarea {
+    font-family: inherit;
+}
 
-/* =========================
+
+/* =========================================================
    COMMON
-========================= */
+========================================================= */
 
 .section-inner {
     width: 100%;
@@ -43,70 +52,66 @@ section {
 
 .section-label {
     margin-bottom: 20px;
-
-    font-size: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
     font-weight: 400;
     letter-spacing: 4px;
-
     color: #999d93;
 }
 
-h2 {
-    font-family: 'Bodoni Moda', serif;
-    font-size: clamp(37px, 9.5vw, 47px);
-    line-height: 0.96;
-    font-weight: 400;
-    letter-spacing: 0.2px;
 
+/* =========================================================
+   MAIN HEADINGS
+========================================================= */
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(34px, 8vw, 42px);
+    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.3px;
     color: #4f5950;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
     position: relative;
-
     width: 100%;
     height: 100svh;
     min-height: 680px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
-
     background: #f8f6ef;
 }
 
 
-/* VIDEO */
+/* HERO VIDEO */
 
 .hero-video {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
     z-index: 0;
     pointer-events: none;
 }
 
 
-/* =========================
-   LANGUAGE
-========================= */
+/* =========================================================
+   LANGUAGE SWITCH
+========================================================= */
 
 .language-switch {
     position: absolute;
-
     top: 24px;
     right: 24px;
 
@@ -117,15 +122,13 @@ h2 {
     padding: 7px 10px;
 
     background: rgba(255, 255, 255, 0.82);
-
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 
     border: 1px solid rgba(183, 168, 120, 0.5);
     border-radius: 20px;
 
-    box-shadow:
-        0 4px 15px rgba(80, 75, 60, 0.08);
+    box-shadow: 0 4px 15px rgba(80, 75, 60, 0.08);
 
     z-index: 50;
 }
@@ -138,16 +141,14 @@ h2 {
 .lang {
     border: none;
     background: transparent;
-
     padding: 2px 3px;
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 300;
     letter-spacing: 1.2px;
 
     color: #8d9188;
-
     cursor: pointer;
 }
 
@@ -157,13 +158,12 @@ h2 {
 }
 
 
-/* =========================
+/* =========================================================
    MUSIC
-========================= */
+========================================================= */
 
 .music-button {
     position: absolute;
-
     top: 23px;
     left: 24px;
 
@@ -187,8 +187,7 @@ h2 {
 
     cursor: pointer;
 
-    box-shadow:
-        0 4px 15px rgba(80, 75, 60, 0.08);
+    box-shadow: 0 4px 15px rgba(80, 75, 60, 0.08);
 
     z-index: 50;
 
@@ -200,16 +199,15 @@ h2 {
 }
 
 
-/* =========================
+/* =========================================================
    HERO CONTENT
-========================= */
+========================================================= */
 
 .hero-content {
     position: relative;
     z-index: 5;
 
     width: 100%;
-
     padding: 20px 28px;
 
     text-align: center;
@@ -220,7 +218,7 @@ h2 {
 .hero-small {
     margin-bottom: 28px;
 
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 400;
     letter-spacing: 4px;
 
@@ -231,14 +229,14 @@ h2 {
     max-width: 380px;
     margin: 0 auto;
 
-    font-family: 'Cormorant Garamond', serif;
+     font-family: var(--font-script);
     font-style: italic;
 
-    font-size: clamp(42px, 10vw, 54px);
-    line-height: 0.95;
+    font-size: clamp(28px, 8.5vw, 52px);
+    line-height: 0.96;
 
     font-weight: 500;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
 
     color: #4f5950;
 }
@@ -251,9 +249,8 @@ h2 {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
 
-    font-size: 32px;
+    font-size: 29px;
     line-height: 1;
-
     font-weight: 400;
 
     color: #aa9a6e;
@@ -269,7 +266,7 @@ h2 {
 }
 
 .hero-date {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 5px;
 
@@ -277,9 +274,9 @@ h2 {
 }
 
 
-/* =========================
+/* =========================================================
    SCROLL
-========================= */
+========================================================= */
 
 .scroll-down {
     position: absolute;
@@ -297,7 +294,7 @@ h2 {
 
     z-index: 10;
 
-    font-size: 7px;
+    font-size: 8px;
     letter-spacing: 3px;
 
     color: #8d9389;
@@ -309,9 +306,9 @@ h2 {
 }
 
 
-/* =========================
+/* =========================================================
    INVITATION
-========================= */
+========================================================= */
 
 .invitation {
     background: #f8f7f3;
@@ -334,42 +331,40 @@ h2 {
 }
 
 .invitation h2 {
-    max-width: 380px;
+    max-width: 360px;
     margin: 0 auto;
-
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-
-    font-size: clamp(39px, 9.5vw, 52px);
-    line-height: 0.95;
-
-    font-weight: 500;
-    letter-spacing: -0.5px;
-
-    color: #4f5950;
 }
+
+
+/* DECORATIVE LINE */
 
 .decorative-line {
     width: 55px;
     height: 1px;
 
-    margin: 27px auto;
+    margin: 25px auto;
 
     background: #b8a97c;
 }
+
+
+/* INVITATION TEXT */
 
 .invitation-text {
     max-width: 325px;
     margin: 0 auto;
 
-    font-size: 11px;
-    line-height: 2.05;
+    font-size: 12px;
+    line-height: 2;
 
     color: #858b83;
 }
 
 
-/* DATE */
+/* =========================================================
+   INVITATION DATE
+========================================================= */
+
 .invitation-date {
     display: flex;
     align-items: center;
@@ -377,7 +372,7 @@ h2 {
 
     gap: 14px;
 
-    margin-top: 34px;
+    margin-top: 32px;
 
     white-space: nowrap;
 
@@ -388,9 +383,8 @@ h2 {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
 
-    font-size: 38px;
+    font-size: 35px;
     line-height: 1;
-
     font-weight: 500;
 
     color: #aa9a6e;
@@ -399,16 +393,14 @@ h2 {
 .invitation-date > div {
     display: flex;
     align-items: baseline;
-
     gap: 10px;
 }
 
 .invitation-date small {
     font-family: 'Montserrat', sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 400;
-
     letter-spacing: 3px;
 
     color: #858c82;
@@ -417,18 +409,17 @@ h2 {
 .invitation-date strong {
     font-family: 'Cormorant Garamond', serif;
 
-    font-size: 32px;
+    font-size: 29px;
     line-height: 1;
-
     font-weight: 500;
 
     color: #4f5950;
 }
 
 
-/* =========================
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
 
 .countdown-section {
     background: #f1f0e9;
@@ -438,24 +429,19 @@ h2 {
     padding: 75px 22px 80px;
 }
 
-.countdown-section .section-label {
-    margin-bottom: 20px;
-}
-
 .countdown-section h2 {
-    font-size: clamp(39px, 10vw, 48px);
-    color: #4f5950;
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 .countdown {
     width: 100%;
     max-width: 390px;
 
-    margin: 48px auto 0;
+    margin: 44px auto 0;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     gap: 10px;
 }
 
@@ -466,8 +452,8 @@ h2 {
 }
 
 .count-box strong {
-    width: 70px;
-    height: 70px;
+    width: 68px;
+    height: 68px;
 
     display: flex;
     align-items: center;
@@ -476,10 +462,9 @@ h2 {
     border: 1px solid rgba(178, 151, 91, 0.75);
     border-radius: 50%;
 
-    font-family: 'Bodoni Moda', serif;
-    font-size: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
     line-height: 1;
-
     font-weight: 500;
 
     color: #4f574c;
@@ -495,31 +480,29 @@ h2 {
     margin-top: 12px;
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 7px;
-    font-weight: 500;
 
+    font-size: 8px;
+    font-weight: 500;
     letter-spacing: 2px;
 
     color: #777d72;
 }
 
 
-/* =========================
+/* =========================================================
    LOCATION
-========================= */
+========================================================= */
 
 .location {
     position: relative;
+
     width: 100%;
     min-height: 850px;
+
     overflow: hidden;
+
     background: #f4efe5;
 }
-
-
-/* =========================
-   BACKGROUND
-========================= */
 
 .location-bg {
     position: absolute;
@@ -538,6 +521,7 @@ h2 {
 
 .location-bg::after {
     content: "";
+
     position: absolute;
     inset: 0;
 
@@ -547,9 +531,7 @@ h2 {
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+/* LOCATION CONTENT */
 
 .location-content {
     position: relative;
@@ -566,73 +548,37 @@ h2 {
     text-align: center;
 }
 
-
-/* =========================
-   LABEL
-========================= */
-
 .location .section-label {
     margin-bottom: 18px;
-
-    font-size: 8px;
-    font-weight: 400;
-    letter-spacing: 4px;
-
-    color: #858c82;
 }
-
-
-/* =========================
-   TITLE
-========================= */
 
 .location h2 {
-    max-width: 360px;
-
+    max-width: 350px;
     margin: 0 auto;
 
-    font-family: 'Bodoni Moda', serif;
-    font-size: clamp(39px, 10vw, 48px);
-    line-height: 0.94;
-
-    font-weight: 400;
-    letter-spacing: 0;
-
-    color: #4f5950;
-
-    text-shadow:
-        0 1px 4px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.7);
 }
 
 
-/* =========================
-   ADDRESS
-   FAQAT SHU YERDA OQ FON
-========================= */
+/* ADDRESS */
 
 .location-address {
     position: relative;
 
     display: inline-block;
 
-    margin: 30px auto 28px;
-
+    margin: 28px auto 27px;
     padding: 18px 34px;
 
-    font-size: 10px;
+    font-size: 11px;
     line-height: 2;
 
     font-weight: 500;
 
     color: #596154;
 
-    text-shadow: none;
-
     z-index: 2;
 }
-
-
-/* OVAL BACKGROUND */
 
 .location-address::before {
     content: "";
@@ -658,9 +604,9 @@ h2 {
 }
 
 
-/* =========================
+/* =========================================================
    MAP
-========================= */
+========================================================= */
 
 .map-card {
     position: relative;
@@ -676,7 +622,6 @@ h2 {
     background: #f8f7f3;
 
     border: 1px solid rgba(183, 168, 120, 0.5);
-
     border-radius: 20px;
 
     box-shadow:
@@ -695,9 +640,7 @@ h2 {
 }
 
 
-/* =========================
-   MAP BUTTON
-========================= */
+/* MAP BUTTON */
 
 .map-button {
     width: 190px;
@@ -719,7 +662,7 @@ h2 {
 
     font-family: 'Montserrat', sans-serif;
 
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 400;
     letter-spacing: 2px;
 
@@ -740,11 +683,9 @@ h2 {
 }
 
 
-
-
-/* =========================
+/* =========================================================
    RSVP
-========================= */
+========================================================= */
 
 .rsvp {
     background: #eeeee8;
@@ -759,23 +700,29 @@ h2 {
 }
 
 .rsvp h2 {
-    font-size: clamp(37px, 9.5vw, 45px);
-    color: #4f5950;
+    max-width: 360px;
+    margin: 0 auto;
 }
+
+
+/* RSVP DESCRIPTION */
 
 .rsvp-text {
     max-width: 300px;
 
-    margin: 25px auto 30px;
+    margin: 23px auto 30px;
 
-    font-size: 10px;
-    line-height: 1.9;
+    font-size: 13px;
+    line-height: 1.8;
+    letter-spacing: 0.15px;
 
     color: #7d8279;
 }
 
 
-/* FORM */
+/* =========================================================
+   RSVP FORM
+========================================================= */
 
 .rsvp-form {
     width: 100%;
@@ -785,7 +732,9 @@ h2 {
 }
 
 
-/* NAME + WISH */
+/* =========================================================
+   INPUTS
+========================================================= */
 
 .guest-name,
 .guest-wish {
@@ -798,6 +747,7 @@ h2 {
     color: #596154;
 
     font-family: 'Montserrat', sans-serif;
+
     font-weight: 300;
 
     outline: none;
@@ -807,59 +757,131 @@ h2 {
         background 0.25s ease;
 }
 
+
+/* NAME INPUT */
+
 .guest-name {
-    height: 52px;
+    height: 54px;
 
     padding: 0 18px;
 
-    font-size: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
 
     text-align: center;
 }
 
+
+/* WISH TEXTAREA */
+
 .guest-wish {
-    min-height: 100px;
+    min-height: 110px;
 
     margin-top: 12px;
 
-    padding: 15px 17px;
+    padding: 16px 17px;
 
     resize: none;
 
-    font-size: 10px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
 
     text-align: left;
 }
 
+
+/* PLACEHOLDERS */
+
 .guest-name::placeholder,
 .guest-wish::placeholder {
     color: #a1a49b;
+
+    font-size: 14px;
+    letter-spacing: 0.2px;
+
+    opacity: 1;
 }
+
+
+/* FOCUS */
 
 .guest-name:focus,
 .guest-wish:focus {
     border-color: #b5a878;
+
     background: rgba(255, 255, 255, 0.72);
 }
 
 
-/* QUESTION */
+/* =========================================================
+   WISH BUTTON
+========================================================= */
+
+.wish-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 190px;
+    height: 50px;
+
+    margin: 16px auto 42px;
+
+    border: 1px solid rgba(170, 154, 110, 0.7);
+
+    background: rgba(255, 255, 255, 0.45);
+
+    color: #596154;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2.3px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease;
+}
+
+.wish-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.wish-button:active {
+    transform: scale(0.97);
+}
+
+.wish-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+/* =========================================================
+   RSVP QUESTION
+========================================================= */
 
 .rsvp-question {
     margin: 24px auto 14px;
 
-    font-size: 7px;
+    font-size: 11px;
     font-weight: 400;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
     line-height: 1.6;
 
     color: #858b82;
 }
 
 
-/* RESPONSE BUTTONS */
+/* =========================================================
+   RSVP BUTTONS
+========================================================= */
 
 .rsvp-buttons {
     display: flex;
@@ -872,7 +894,7 @@ h2 {
 
 .rsvp-button {
     width: 100%;
-    min-height: 50px;
+    min-height: 52px;
 
     display: flex;
     align-items: center;
@@ -887,7 +909,8 @@ h2 {
     color: #60675b;
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 8px;
+
+    font-size: 12px;
     font-weight: 400;
 
     letter-spacing: 2px;
@@ -902,7 +925,8 @@ h2 {
 
 .rsvp-icon {
     font-family: Arial, sans-serif;
-    font-size: 13px;
+
+    font-size: 14px;
 
     color: #a99d78;
 }
@@ -925,23 +949,25 @@ h2 {
 }
 
 
-/* RESPONSE MESSAGE */
+/* =========================================================
+   RSVP MESSAGE
+========================================================= */
 
 .rsvp-message {
     min-height: 20px;
 
     margin-top: 15px;
 
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.6;
 
     color: #70776d;
 }
 
 
-/* =========================
+/* =========================================================
    FINAL
-========================= */
+========================================================= */
 
 .final {
     position: relative;
@@ -981,8 +1007,8 @@ h2 {
     background:
         linear-gradient(
             to bottom,
-            rgba(250,247,239,0.18),
-            rgba(250,247,239,0.30)
+            rgba(250, 247, 239, 0.18),
+            rgba(250, 247, 239, 0.30)
         );
 
     z-index: 1;
@@ -1008,7 +1034,7 @@ h2 {
 .final-small {
     margin-bottom: 25px;
 
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 400;
     letter-spacing: 4px;
 
@@ -1016,13 +1042,12 @@ h2 {
 }
 
 .final h2 {
-    max-width: 370px;
+    max-width: 360px;
 
-    font-size: clamp(42px, 11vw, 58px);
+    margin: 0 auto;
 
-    line-height: 0.88;
-
-    color: #4f5950;
+    font-size: clamp(40px, 9.5vw, 52px);
+    line-height: 0.92;
 }
 
 .final h2 span {
@@ -1030,8 +1055,10 @@ h2 {
 
     margin: 9px 0;
 
-    font-family: 'Bodoni Moda', serif;
-    font-size: 27px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+
+    font-size: 26px;
 
     color: #a99a72;
 }
@@ -1039,7 +1066,7 @@ h2 {
 .final-date {
     margin-top: 30px;
 
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 5px;
 
@@ -1059,11 +1086,11 @@ h2 {
     display: block;
 
     max-width: 230px;
+
     margin: 0 auto;
 
-    font-size: 7px;
+    font-size: 8px;
     line-height: 1.7;
-
     letter-spacing: 0.5px;
 
     color: #858b82;
@@ -1072,22 +1099,64 @@ h2 {
 }
 
 
-/* =========================
+/* =========================================================
+   WISH MODAL / EXTRA ELEMENTS
+========================================================= */
+
+.wishes-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+
+    font-size: clamp(34px, 8vw, 44px);
+    line-height: 1;
+
+    font-weight: 500;
+
+    color: #4f5950;
+}
+
+.wishes-subtitle {
+    font-size: 11px;
+}
+
+.wish-modal-box input,
+.wish-modal-box textarea {
+    font-size: 14px;
+}
+
+.wish-modal-box input::placeholder,
+.wish-modal-box textarea::placeholder {
+    font-size: 14px;
+}
+
+.wish-suggestions button {
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.wish-modal-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 28px;
+}
+
+
+/* =========================================================
    TABLET / DESKTOP
-========================= */
+========================================================= */
 
 @media (min-width: 700px) {
 
     .section-inner {
-        padding: 110px 40px;
+        padding: 100px 40px;
     }
 
     .hero h1 {
-        font-size: 76px;
+        font-size: 60px;
     }
 
     h2 {
-        font-size: 50px;
+        font-size: 44px;
     }
 
     .hero,
@@ -1095,95 +1164,68 @@ h2 {
         min-height: 100vh;
     }
 
-    .location {
-        min-height: 850px;
-    }
-
+    .location,
     .location-content {
         min-height: 850px;
     }
-}
-.wish-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    width: 190px;
-    height: 48px;
-
-    margin: 16px auto 42px;
-
-    border: 1px solid rgba(170, 154, 110, 0.7);
-
-    background: rgba(255, 255, 255, 0.45);
-
-    color: #596154;
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 8px;
-    font-weight: 400;
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition:
-        background 0.25s ease,
-        transform 0.2s ease;
+    .count-box strong {
+        width: 72px;
+        height: 72px;
+    }
 }
 
-.wish-button:hover {
-    background: rgba(255, 255, 255, 0.8);
-}
 
-.wish-button:active {
-    transform: scale(0.97);
-}
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
-.wish-button:disabled {
-    opacity: 0.5;
-    cursor: default;
-}
-/* =========================
-   MATCHING ITALIC HEADINGS
-========================= */
+@media (max-width: 360px) {
 
-.countdown-section h2,
-.location h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 500;
+    .section-inner {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
 
-    letter-spacing: -0.5px;
-}
+    .hero h1 {
+        font-size: 38px;
+    }
 
-/* COUNTDOWN */
-.countdown-section h2 {
-    font-size: clamp(39px, 9.5vw, 52px);
-    line-height: 0.95;
-}
+    h2 {
+        font-size: 32px;
+    }
 
-/* LOCATION */
-.location h2 {
-    font-size: clamp(39px, 10vw, 50px);
-    line-height: 0.95;
-}
-/* ========================= FINAL TYPOGRAPHY BALANCE ========================= */
-/* RSVP katta sarlavhasi */ .rsvp h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-font-size: clamp(36px, 8.8vw, 48px);
-line-height: 0.95;
+    .invitation-text {
+        font-size: 11px;
+    }
 
-letter-spacing: -0.4px;
+    .guest-name,
+    .guest-wish {
+        font-size: 13px;
+    }
+
+    .guest-name::placeholder,
+    .guest-wish::placeholder {
+        font-size: 13px;
+    }
+
+    .count-box strong {
+        width: 62px;
+        height: 62px;
+
+        font-size: 27px;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .count-box span {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+    }
+
+    .final h2 {
+        font-size: 38px;
+    }
 }
-/* Tilaklar sarlavhasi */ .wishes-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-font-size: clamp(36px, 8.8vw, 46px);
-line-height: 1;
-}
-/* RSVP izoh matni */ .rsvp-text { font-size: 10px; line-height: 1.8; }
-/* Tilaklar ostidagi kichik matn */ .wishes-subtitle { font-size: 10px; }
-/* Inputlar */ .wish-modal-box input, .wish-modal-box textarea { font-size: 11px; }
-/* Input placeholder */ .wish-modal-box input::placeholder, .wish-modal-box textarea::placeholder { font-size: 11px; }
-/* Tayyor tilak tugmalari */ .wish-suggestions button { font-size: 8px; line-height: 1.4; }
-/* Modal sarlavhasi */ .wish-modal-box h3 { font-size: 27px; }
-/* RSVP savoli */ .rsvp-question { font-size: 8px; }
-/* RSVP tugmalari */ .rsvp-box .rsvp-button { font-size: 9px; }
-/* Tilak yuborish tugmasi */ .wish-submit-button { font-size: 9px; }

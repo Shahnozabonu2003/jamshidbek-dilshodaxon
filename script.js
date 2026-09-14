@@ -1,30 +1,38 @@
-/* =========================
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
 
 const weddingDate = new Date("October 11, 2026 18:00:00").getTime();
 
 function updateCountdown() {
+
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
     if (distance <= 0) {
+
         document.getElementById("days").textContent = "00";
         document.getElementById("hours").textContent = "00";
         document.getElementById("minutes").textContent = "00";
         document.getElementById("seconds").textContent = "00";
+
         return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
     const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) /
         (1000 * 60 * 60)
     );
+
     const minutes = Math.floor(
         (distance % (1000 * 60 * 60)) /
         (1000 * 60)
     );
+
     const seconds = Math.floor(
         (distance % (1000 * 60)) /
         1000
@@ -44,15 +52,13 @@ function updateCountdown() {
 }
 
 updateCountdown();
+
 setInterval(updateCountdown, 1000);
 
 
-/* =========================
+/* =========================================================
    MUSIC
-========================= */
-/* =========================
-   MUSIC
-========================= */
+========================================================= */
 
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
@@ -60,7 +66,8 @@ const musicButton = document.getElementById("musicButton");
 let isPlaying = false;
 
 
-// MUSIQANI BOSHLASH
+/* MUSIQANI BOSHLASH */
+
 function startMusic() {
 
     music.play()
@@ -71,9 +78,6 @@ function startMusic() {
 
         })
         .catch(() => {
-
-            // Brauzer autoplayni bloklagan bo‘lsa,
-            // birinchi foydalanuvchi tegishida boshlaymiz.
 
             const startOnInteraction = () => {
 
@@ -112,11 +116,13 @@ function startMusic() {
 }
 
 
-// SAYT OCHILISHI BILAN URINIB KO‘RAMIZ
+/* SAYT OCHILISHI BILAN URINAMIZ */
+
 startMusic();
 
 
-// MUSIC BUTTON
+/* MUSIC BUTTON */
+
 musicButton.addEventListener("click", () => {
 
     if (isPlaying) {
@@ -147,249 +153,557 @@ musicButton.addEventListener("click", () => {
     }
 });
 
-/* =========================
+
+/* =========================================================
    LANGUAGE
-========================= */
+========================================================= */
 
 const translations = {
 
+    /* =====================================================
+       UZBEK
+    ===================================================== */
+
     uz: {
-        heroSmall: "BIZNING TO‘YIMIZ",
-        invitationLabel: "TAKLIF",
-        invitationTitle: "SIZNI TO‘YIMIZGA<br>TAKLIF QILAMIZ",
+
+        heroSmall:
+            "BIZNING TO‘YIMIZ",
+
+        invitationLabel:
+            "TAKLIF",
+
+        invitationTitle:
+            "SIZNI TO‘YIMIZGA<br>TAKLIF QILAMIZ",
 
         invitationText:
             "Hayotimizdagi eng go‘zal kunlardan birini siz bilan birga nishonlashdan mamnun bo‘lamiz. Ushbu quvonchli kunimizda sizni aziz mehmonimiz sifatida kutib qolamiz.",
 
-        month: "OKTABR",
+        month:
+            "OKTABR",
 
-        countdownLabel: "BIZNING KUNIMIZ",
-        countdownTitle: "TO‘YIMIZGA QOLDI",
+        countdownLabel:
+            "BIZNING KUNIMIZ",
 
-        days: "KUN",
-        hours: "SOAT",
-        minutes: "DAQIQA",
-        seconds: "SONIYA",
+        countdownTitle:
+            "TO‘YIMIZGA QOLDI",
 
-        locationLabel: "MANZIL",
-        locationTitle: "SHODIYONA<br>TO‘YXONASI",
+        days:
+            "KUN",
+
+        hours:
+            "SOAT",
+
+        minutes:
+            "DAQIQA",
+
+        seconds:
+            "SONIYA",
+
+        locationLabel:
+            "MANZIL",
+
+        locationTitle:
+            "SHODIYONA<br>TO‘YXONASI",
 
         locationAddress:
             "Namangan viloyati,<br>Uchqo‘rg‘on tumani,<br>Qayqi qishlog‘i",
 
-        mapButton: "XARITADA KO‘RISH",
+        mapButton:
+            "XARITADA KO‘RISH",
 
-        rsvpLabel: "RSVP",
-        rsvpTitle: "TASHRIFINGIZNI<br>TASDIQLANG",
+        rsvpLabel:
+            "RSVP",
+
+        rsvpTitle:
+            "TASHRIFINGIZNI<br>TASDIQLANG",
 
         rsvpText:
             "Sizni ushbu quvonchli kunimizda ko‘rishdan xursand bo‘lamiz.",
 
-        yes: "KELAMAN",
-        no: "KELA OLMAYMAN",
+        namePlaceholder:
+            "Ismingiz",
 
-        finalSmall: "SIZNI KUTIB QOLAMIZ",
+        wishPlaceholder:
+            "Tilagingizni yozing...",
+
+        sendWish:
+            "TILAKNI YUBORISH",
+
+        rsvpQuestion:
+            "TO‘YIMIZGA TASHRIF BUYURASIZMI?",
+
+        yes:
+            "KELAMAN",
+
+        no:
+            "KELA OLMAYMAN",
+
+        finalSmall:
+            "SIZNI KUTIB QOLAMIZ",
 
         credit:
-            "Onlayn Taklifnoma tomonidan tayyorlandi"
+            "Onlayn Taklifnoma tomonidan tayyorlandi",
+
+        enterName:
+            "Avval ismingizni kiriting.",
+
+        enterWish:
+            "Avval tilagingizni yozing.",
+
+        sendingWish:
+            "Tilagingiz yuborilmoqda...",
+
+        wishSuccess:
+            "Rahmat, {name}! 🤍 Tilagingiz yuborildi.",
+
+        wishError:
+            "Tilak yuborilmadi. Qayta urinib ko‘ring.",
+
+        sendingResponse:
+            "Javobingiz yuborilmoqda...",
+
+        responseSuccessComing:
+            "Rahmat, {name}! 🤍 Sizni to‘yimizda kutamiz.",
+
+        responseSuccessNotComing:
+            "Rahmat, {name}! 🤍 Javobingiz qabul qilindi.",
+
+        responseError:
+            "Javob yuborilmadi. Qayta urinib ko‘ring.",
+
+        networkError:
+            "Xatolik yuz berdi. Internetni tekshirib qayta urinib ko‘ring."
     },
 
+
+    /* =====================================================
+       RUSSIAN
+    ===================================================== */
+
     ru: {
-        heroSmall: "НАША СВАДЬБА",
-        invitationLabel: "ПРИГЛАШЕНИЕ",
-        invitationTitle: "ПРИГЛАШАЕМ ВАС<br>НА НАШУ СВАДЬБУ",
+
+        heroSmall:
+            "НАША СВАДЬБА",
+
+        invitationLabel:
+            "ПРИГЛАШЕНИЕ",
+
+        invitationTitle:
+            "ПРИГЛАШАЕМ ВАС<br>НА НАШУ СВАДЬБУ",
 
         invitationText:
             "Мы будем рады разделить с вами один из самых прекрасных дней нашей жизни. Будем счастливы видеть вас среди дорогих гостей в этот особенный день.",
 
-        month: "ОКТЯБРЯ",
+        month:
+            "ОКТЯБРЯ",
 
-        countdownLabel: "НАШ ОСОБЕННЫЙ ДЕНЬ",
-        countdownTitle: "ДО СВАДЬБЫ ОСТАЛОСЬ",
+        countdownLabel:
+            "НАШ ОСОБЕННЫЙ ДЕНЬ",
 
-        days: "ДНЕЙ",
-        hours: "ЧАСОВ",
-        minutes: "МИНУТ",
-        seconds: "СЕКУНД",
+        countdownTitle:
+            "ДО СВАДЬБЫ ОСТАЛОСЬ",
 
-        locationLabel: "АДРЕС",
-        locationTitle: "РЕСТОРАН<br>SHODIYONA",
+        days:
+            "ДНЕЙ",
+
+        hours:
+            "ЧАСОВ",
+
+        minutes:
+            "МИНУТ",
+
+        seconds:
+            "СЕКУНД",
+
+        locationLabel:
+            "АДРЕС",
+
+        locationTitle:
+            "РЕСТОРАН<br>SHODIYONA",
 
         locationAddress:
             "Наманганская область,<br>Учкурганский район,<br>село Кайки",
 
-        mapButton: "ПОКАЗАТЬ НА КАРТЕ",
+        mapButton:
+            "ПОКАЗАТЬ НА КАРТЕ",
 
-        rsvpLabel: "RSVP",
-        rsvpTitle: "ПОДТВЕРДИТЕ<br>ВАШЕ ПРИСУТСТВИЕ",
+        rsvpLabel:
+            "RSVP",
+
+        rsvpTitle:
+            "ПОДТВЕРДИТЕ<br>ВАШЕ ПРИСУТСТВИЕ",
 
         rsvpText:
             "Будем очень рады видеть вас в этот особенный для нас день.",
 
-        yes: "БУДУ",
-        no: "НЕ СМОГУ ПРИЙТИ",
+        namePlaceholder:
+            "Ваше имя",
 
-        finalSmall: "БУДЕМ ЖДАТЬ ВАС",
+        wishPlaceholder:
+            "Напишите ваше пожелание...",
+
+        sendWish:
+            "ОТПРАВИТЬ ПОЖЕЛАНИЕ",
+
+        rsvpQuestion:
+            "ВЫ ПРИДЁТЕ НА НАШУ СВАДЬБУ?",
+
+        yes:
+            "БУДУ",
+
+        no:
+            "НЕ СМОГУ ПРИЙТИ",
+
+        finalSmall:
+            "БУДЕМ ЖДАТЬ ВАС",
 
         credit:
-            "Приглашение подготовлено Onlayn Taklifnoma"
+            "Приглашение подготовлено Onlayn Taklifnoma",
+
+        enterName:
+            "Пожалуйста, введите ваше имя.",
+
+        enterWish:
+            "Пожалуйста, напишите ваше пожелание.",
+
+        sendingWish:
+            "Пожелание отправляется...",
+
+        wishSuccess:
+            "Спасибо, {name}! 🤍 Ваше пожелание отправлено.",
+
+        wishError:
+            "Не удалось отправить пожелание. Попробуйте ещё раз.",
+
+        sendingResponse:
+            "Ваш ответ отправляется...",
+
+        responseSuccessComing:
+            "Спасибо, {name}! 🤍 Будем ждать вас на нашей свадьбе.",
+
+        responseSuccessNotComing:
+            "Спасибо, {name}! 🤍 Ваш ответ принят.",
+
+        responseError:
+            "Не удалось отправить ответ. Попробуйте ещё раз.",
+
+        networkError:
+            "Произошла ошибка. Проверьте интернет и попробуйте ещё раз."
     },
 
+
+    /* =====================================================
+       ENGLISH
+    ===================================================== */
+
     en: {
-        heroSmall: "OUR WEDDING",
-        invitationLabel: "INVITATION",
-        invitationTitle: "YOU ARE INVITED<br>TO OUR WEDDING",
+
+        heroSmall:
+            "OUR WEDDING",
+
+        invitationLabel:
+            "INVITATION",
+
+        invitationTitle:
+            "YOU ARE INVITED<br>TO OUR WEDDING",
 
         invitationText:
             "We would be delighted to celebrate one of the most beautiful days of our lives with you. It would mean a lot to have you as our special guest on this joyful day.",
 
-        month: "OCTOBER",
+        month:
+            "OCTOBER",
 
-        countdownLabel: "OUR SPECIAL DAY",
-        countdownTitle: "UNTIL OUR WEDDING",
+        countdownLabel:
+            "OUR SPECIAL DAY",
 
-        days: "DAYS",
-        hours: "HOURS",
-        minutes: "MINUTES",
-        seconds: "SECONDS",
+        countdownTitle:
+            "UNTIL OUR WEDDING",
 
-        locationLabel: "LOCATION",
-        locationTitle: "SHODIYONA<br>WEDDING HALL",
+        days:
+            "DAYS",
+
+        hours:
+            "HOURS",
+
+        minutes:
+            "MINUTES",
+
+        seconds:
+            "SECONDS",
+
+        locationLabel:
+            "LOCATION",
+
+        locationTitle:
+            "SHODIYONA<br>WEDDING HALL",
 
         locationAddress:
             "Namangan Region,<br>Uchqo‘rg‘on District,<br>Qayqi Village",
 
-        mapButton: "VIEW ON MAP",
+        mapButton:
+            "VIEW ON MAP",
 
-        rsvpLabel: "RSVP",
-        rsvpTitle: "PLEASE CONFIRM<br>YOUR ATTENDANCE",
+        rsvpLabel:
+            "RSVP",
+
+        rsvpTitle:
+            "PLEASE CONFIRM<br>YOUR ATTENDANCE",
 
         rsvpText:
             "We would be delighted to celebrate this special day with you.",
 
-        yes: "I'M COMING",
-        no: "I CAN'T COME",
+        namePlaceholder:
+            "Your name",
 
-        finalSmall: "WE'LL BE WAITING FOR YOU",
+        wishPlaceholder:
+            "Write your wishes...",
+
+        sendWish:
+            "SEND WISH",
+
+        rsvpQuestion:
+            "WILL YOU JOIN US AT OUR WEDDING?",
+
+        yes:
+            "I'M COMING",
+
+        no:
+            "I CAN'T COME",
+
+        finalSmall:
+            "WE'LL BE WAITING FOR YOU",
 
         credit:
-            "Invitation prepared by Onlayn Taklifnoma"
+            "Invitation prepared by Onlayn Taklifnoma",
+
+        enterName:
+            "Please enter your name.",
+
+        enterWish:
+            "Please write your wishes.",
+
+        sendingWish:
+            "Sending your wish...",
+
+        wishSuccess:
+            "Thank you, {name}! 🤍 Your wish has been sent.",
+
+        wishError:
+            "Could not send your wish. Please try again.",
+
+        sendingResponse:
+            "Sending your response...",
+
+        responseSuccessComing:
+            "Thank you, {name}! 🤍 We will be waiting for you at our wedding.",
+
+        responseSuccessNotComing:
+            "Thank you, {name}! 🤍 Your response has been received.",
+
+        responseError:
+            "Could not send your response. Please try again.",
+
+        networkError:
+            "An error occurred. Please check your internet connection and try again."
     }
 };
 
 
-/* =========================
-   APPLY LANGUAGE
-========================= */
+/* =========================================================
+   LANGUAGE BUTTONS
+========================================================= */
 
 const langButtons = document.querySelectorAll(".lang");
+
+
+/* =========================================================
+   APPLY LANGUAGE
+========================================================= */
 
 function changeLanguage(language) {
 
     const t = translations[language];
 
+    if (!t) return;
+
+
+    /* HERO */
+
     document.querySelector(".hero-small").innerHTML =
         t.heroSmall;
+
+
+    /* INVITATION */
 
     document.querySelector(
         ".invitation .section-label"
     ).innerHTML = t.invitationLabel;
 
+
     document.querySelector(
         ".invitation h2"
     ).innerHTML = t.invitationTitle;
+
 
     document.querySelector(
         ".invitation-text"
     ).innerHTML = t.invitationText;
 
+
     document.querySelector(
         ".invitation-date small"
     ).innerHTML = t.month;
+
+
+    /* COUNTDOWN */
 
     document.querySelector(
         ".countdown-section .section-label"
     ).innerHTML = t.countdownLabel;
 
+
     document.querySelector(
         ".countdown-section h2"
     ).innerHTML = t.countdownTitle;
+
 
     document.querySelector(
         ".count-box:nth-child(1) span"
     ).innerHTML = t.days;
 
+
     document.querySelector(
         ".count-box:nth-child(2) span"
     ).innerHTML = t.hours;
+
 
     document.querySelector(
         ".count-box:nth-child(3) span"
     ).innerHTML = t.minutes;
 
+
     document.querySelector(
         ".count-box:nth-child(4) span"
     ).innerHTML = t.seconds;
+
+
+    /* LOCATION */
 
     document.querySelector(
         ".location .section-label"
     ).innerHTML = t.locationLabel;
 
+
     document.querySelector(
         ".location h2"
     ).innerHTML = t.locationTitle;
+
 
     document.querySelector(
         ".location-address"
     ).innerHTML = t.locationAddress;
 
+
     document.querySelector(
         ".map-button"
-    ).innerHTML = `${t.mapButton} <span>↗</span>`;
+    ).innerHTML =
+        `${t.mapButton} <span>↗</span>`;
+
+
+    /* RSVP */
 
     document.querySelector(
         ".rsvp .section-label"
     ).innerHTML = t.rsvpLabel;
 
+
     document.querySelector(
         ".rsvp h2"
     ).innerHTML = t.rsvpTitle;
+
 
     document.querySelector(
         ".rsvp-text"
     ).innerHTML = t.rsvpText;
 
+
+    /* INPUT PLACEHOLDERS */
+
+    document.querySelector(
+        "#guestName"
+    ).placeholder = t.namePlaceholder;
+
+
+    document.querySelector(
+        "#guestWish"
+    ).placeholder = t.wishPlaceholder;
+
+
+    /* WISH BUTTON */
+
+    document.querySelector(
+        "#wishButton"
+    ).textContent = t.sendWish;
+
+
+    /* RSVP QUESTION */
+
+    document.querySelector(
+        ".rsvp-question"
+    ).textContent = t.rsvpQuestion;
+
+
+    /* RSVP BUTTONS */
+
     document.querySelector(
         ".rsvp-buttons button:first-child"
-    ).innerHTML = t.yes;
+    ).innerHTML =
+        `<span class="rsvp-icon">✓</span>${t.yes}`;
+
 
     document.querySelector(
         ".rsvp-buttons button:last-child"
-    ).innerHTML = t.no;
+    ).innerHTML =
+        `<span class="rsvp-icon">×</span>${t.no}`;
+
+
+    /* FINAL */
 
     document.querySelector(
         ".final-small"
     ).innerHTML = t.finalSmall;
 
+
     document.querySelector(
         ".credit"
     ).innerHTML = t.credit;
 
+
+    /* ACTIVE LANGUAGE */
+
     langButtons.forEach(button => {
+
         button.classList.remove("active");
 
         if (button.dataset.lang === language) {
             button.classList.add("active");
         }
+
     });
 
+
     document.documentElement.lang = language;
+
+
+    /* CURRENT LANGUAGE */
+
+    currentLanguage = language;
 }
 
 
-/* =========================
-   LANGUAGE BUTTONS
-========================= */
+/* =========================================================
+   LANGUAGE CLICK
+========================================================= */
 
 langButtons.forEach(button => {
 
@@ -404,52 +718,81 @@ langButtons.forEach(button => {
 });
 
 
-/* DEFAULT LANGUAGE */
+/* =========================================================
+   DEFAULT LANGUAGE
+========================================================= */
+
+let currentLanguage = "uz";
 
 changeLanguage("uz");
 
-// =========================
-// RSVP + WISH
-// =========================
 
-const guestName = document.getElementById("guestName");
-const guestWish = document.getElementById("guestWish");
+/* =========================================================
+   RSVP + WISH
+========================================================= */
 
-const wishButton = document.getElementById("wishButton");
-const rsvpButtons = document.querySelectorAll(".rsvp-button");
-const rsvpMessage = document.getElementById("rsvpMessage");
+const guestName =
+    document.getElementById("guestName");
+
+const guestWish =
+    document.getElementById("guestWish");
+
+const wishButton =
+    document.getElementById("wishButton");
+
+const rsvpButtons =
+    document.querySelectorAll(".rsvp-button");
+
+const rsvpMessage =
+    document.getElementById("rsvpMessage");
+
 
 const rsvpServer =
     "https://jamshidbek-rsvp.shahnozabonusherqoziyeva.workers.dev";
 
 
-// =========================
-// TILAKNI ALOHIDA YUBORISH
-// =========================
+/* =========================================================
+   TILAKNI ALOHIDA YUBORISH
+========================================================= */
 
 wishButton.addEventListener("click", async () => {
 
-    const name = guestName.value.trim();
-    const wish = guestWish.value.trim();
+    const t = translations[currentLanguage];
+
+    const name =
+        guestName.value.trim();
+
+    const wish =
+        guestWish.value.trim();
+
 
     if (!name) {
+
         guestName.focus();
+
         rsvpMessage.textContent =
-            "Avval ismingizni kiriting.";
+            t.enterName;
+
         return;
     }
 
+
     if (!wish) {
+
         guestWish.focus();
+
         rsvpMessage.textContent =
-            "Avval tilagingizni yozing.";
+            t.enterWish;
+
         return;
     }
+
 
     wishButton.disabled = true;
 
     rsvpMessage.textContent =
-        "Tilagingiz yuborilmoqda...";
+        t.sendingWish;
+
 
     try {
 
@@ -469,113 +812,148 @@ wishButton.addEventListener("click", async () => {
             }
         );
 
-        const data = await result.json();
+
+        const data =
+            await result.json();
+
 
         if (data.success) {
 
             rsvpMessage.textContent =
-                `Rahmat, ${name}! 🤍 Tilagingiz yuborildi.`;
+                t.wishSuccess.replace(
+                    "{name}",
+                    name
+                );
 
             guestWish.value = "";
 
         } else {
 
             rsvpMessage.textContent =
-                "Tilak yuborilmadi. Qayta urinib ko‘ring.";
+                t.wishError;
         }
+
 
     } catch (error) {
 
         console.error(error);
 
         rsvpMessage.textContent =
-            "Xatolik yuz berdi. Internetni tekshirib qayta urinib ko‘ring.";
+            t.networkError;
 
     } finally {
 
         wishButton.disabled = false;
     }
+
 });
 
 
-// =========================
-// RSVP ALOHIDA YUBORISH
-// =========================
+/* =========================================================
+   RSVP ALOHIDA YUBORISH
+========================================================= */
 
 rsvpButtons.forEach(button => {
 
-    button.addEventListener("click", async () => {
+    button.addEventListener(
+        "click",
+        async () => {
 
-        const name = guestName.value.trim();
+            const t =
+                translations[currentLanguage];
 
-        if (!name) {
-            guestName.focus();
+
+            const name =
+                guestName.value.trim();
+
+
+            if (!name) {
+
+                guestName.focus();
+
+                rsvpMessage.textContent =
+                    t.enterName;
+
+                return;
+            }
+
+
+            const response =
+                button.dataset.response;
+
+
+            /* ACTIVE BUTTON */
+
+            rsvpButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+
+            button.classList.add("active");
+
 
             rsvpMessage.textContent =
-                "Avval ismingizni kiriting.";
+                t.sendingResponse;
 
-            return;
-        }
 
-        const response =
-            button.dataset.response;
+            try {
 
-        rsvpButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
+                const result = await fetch(
+                    `${rsvpServer}/rsvp`,
+                    {
+                        method: "POST",
 
-        button.classList.add("active");
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
 
-        rsvpMessage.textContent =
-            "Javobingiz yuborilmoqda...";
+                        body: JSON.stringify({
+                            name: name,
+                            response: response
+                        })
+                    }
+                );
 
-        try {
 
-            const result = await fetch(
-                `${rsvpServer}/rsvp`,
-                {
-                    method: "POST",
+                const data =
+                    await result.json();
 
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
 
-                    body: JSON.stringify({
-                        name: name,
-                        response: response
-                    })
-                }
-            );
+                if (data.success) {
 
-            const data = await result.json();
+                    if (response === "KELAMAN") {
 
-            if (data.success) {
+                        rsvpMessage.textContent =
+                            t.responseSuccessComing.replace(
+                                "{name}",
+                                name
+                            );
 
-                if (response === "KELAMAN") {
+                    } else {
 
-                    rsvpMessage.textContent =
-                        `Rahmat, ${name}! 🤍 Sizni to‘yimizda kutamiz.`;
+                        rsvpMessage.textContent =
+                            t.responseSuccessNotComing.replace(
+                                "{name}",
+                                name
+                            );
+                    }
 
                 } else {
 
                     rsvpMessage.textContent =
-                        `Rahmat, ${name}! 🤍 Javobingiz qabul qilindi.`;
+                        t.responseError;
                 }
 
-            } else {
+
+            } catch (error) {
+
+                console.error(error);
 
                 rsvpMessage.textContent =
-                    "Javob yuborilmadi. Qayta urinib ko‘ring.";
+                    t.networkError;
             }
 
-        } catch (error) {
-
-            console.error(error);
-
-            rsvpMessage.textContent =
-                "Xatolik yuz berdi. Internetni tekshirib qayta urinib ko‘ring.";
         }
-
-    });
+    );
 
 });
