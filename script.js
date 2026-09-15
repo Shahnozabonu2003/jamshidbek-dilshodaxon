@@ -172,8 +172,8 @@ const translations = {
         invitationLabel:
             "TAKLIF",
 
-        invitationTitle:
-            "SIZNI TO‘YIMIZGA<br>TAKLIF QILAMIZ",
+      invitationTitle:
+    "Sizni to‘yimizga<br>taklif qilamiz",
 
         invitationText:
             "Hayotimizdagi eng go‘zal kunlardan birini siz bilan birga nishonlashdan mamnun bo‘lamiz. Ushbu quvonchli kunimizda sizni aziz mehmonimiz sifatida kutib qolamiz.",
@@ -185,7 +185,7 @@ const translations = {
             "BIZNING KUNIMIZ",
 
         countdownTitle:
-            "TO‘YIMIZGA QOLDI",
+    "To‘yimizga qoldi",
 
         days:
             "KUN",
@@ -202,8 +202,8 @@ const translations = {
         locationLabel:
             "MANZIL",
 
-        locationTitle:
-            "SHODIYONA<br>TO‘YXONASI",
+       locationTitle:
+    "Shodiyona<br>To‘yxonasi",
 
         locationAddress:
             "Namangan viloyati,<br>Uchqo‘rg‘on tumani,<br>Qayqi qishlog‘i",
@@ -214,8 +214,8 @@ const translations = {
         rsvpLabel:
             "RSVP",
 
-        rsvpTitle:
-            "TASHRIFINGIZNI<br>TASDIQLANG",
+       rsvpTitle:
+    "Tashrifingizni<br>tasdiqlang",
 
         rsvpText:
             "Sizni ushbu quvonchli kunimizda ko‘rishdan xursand bo‘lamiz.",
@@ -288,8 +288,8 @@ const translations = {
         invitationLabel:
             "ПРИГЛАШЕНИЕ",
 
-        invitationTitle:
-            "ПРИГЛАШАЕМ ВАС<br>НА НАШУ СВАДЬБУ",
+      invitationTitle:
+    "Приглашаем вас<br>на нашу свадьбу",
 
         invitationText:
             "Мы будем рады разделить с вами один из самых прекрасных дней нашей жизни. Будем счастливы видеть вас среди дорогих гостей в этот особенный день.",
@@ -300,8 +300,8 @@ const translations = {
         countdownLabel:
             "НАШ ОСОБЕННЫЙ ДЕНЬ",
 
-        countdownTitle:
-            "ДО СВАДЬБЫ ОСТАЛОСЬ",
+       countdownTitle:
+    "До свадьбы осталось",
 
         days:
             "ДНЕЙ",
@@ -318,8 +318,8 @@ const translations = {
         locationLabel:
             "АДРЕС",
 
-        locationTitle:
-            "РЕСТОРАН<br>SHODIYONA",
+       locationTitle:
+    "Ресторан<br>Shodiyona",
 
         locationAddress:
             "Наманганская область,<br>Учкурганский район,<br>село Кайки",
@@ -330,8 +330,8 @@ const translations = {
         rsvpLabel:
             "RSVP",
 
-        rsvpTitle:
-            "ПОДТВЕРДИТЕ<br>ВАШЕ ПРИСУТСТВИЕ",
+    rsvpTitle:
+    "Подтвердите<br>ваше присутствие",
 
         rsvpText:
             "Будем очень рады видеть вас в этот особенный для нас день.",
@@ -404,8 +404,8 @@ const translations = {
         invitationLabel:
             "INVITATION",
 
-        invitationTitle:
-            "YOU ARE INVITED<br>TO OUR WEDDING",
+       invitationTitle:
+    "You are invited<br>to our wedding",
 
         invitationText:
             "We would be delighted to celebrate one of the most beautiful days of our lives with you. It would mean a lot to have you as our special guest on this joyful day.",
@@ -417,7 +417,7 @@ const translations = {
             "OUR SPECIAL DAY",
 
         countdownTitle:
-            "UNTIL OUR WEDDING",
+    "Until our wedding",
 
         days:
             "DAYS",
@@ -435,7 +435,7 @@ const translations = {
             "LOCATION",
 
         locationTitle:
-            "SHODIYONA<br>WEDDING HALL",
+    "Shodiyona<br>Wedding Hall",
 
         locationAddress:
             "Namangan Region,<br>Uchqo‘rg‘on District,<br>Qayqi Village",
@@ -446,8 +446,8 @@ const translations = {
         rsvpLabel:
             "RSVP",
 
-        rsvpTitle:
-            "PLEASE CONFIRM<br>YOUR ATTENDANCE",
+      rsvpTitle:
+    "Please confirm<br>your attendance",
 
         rsvpText:
             "We would be delighted to celebrate this special day with you.",
