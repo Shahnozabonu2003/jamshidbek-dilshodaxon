@@ -166,8 +166,8 @@ const translations = {
 
     uz: {
 
-        heroSmall:
-            "BIZNING TO‘YIMIZ",
+       heroSmall:
+    "TO‘YIMIZGA TAKLIF",
 
         invitationLabel:
             "TAKLIF",
@@ -282,8 +282,8 @@ const translations = {
 
     ru: {
 
-        heroSmall:
-            "НАША СВАДЬБА",
+     heroSmall:
+    "ПРИГЛАШАЕМ НА СВАДЬБУ",
 
         invitationLabel:
             "ПРИГЛАШЕНИЕ",
@@ -398,8 +398,8 @@ const translations = {
 
     en: {
 
-        heroSmall:
-            "OUR WEDDING",
+       heroSmall:
+    "YOU ARE INVITED",
 
         invitationLabel:
             "INVITATION",

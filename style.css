@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Onest:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Onest:wght@300;400;500;600&display=swap');
 
 /* =========================================================
    RESET
@@ -218,9 +218,11 @@ h2 {
 .hero-small {
     margin-bottom: 28px;
 
-    font-size: 9px;
-    font-weight: 400;
-    letter-spacing: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 2px;
 
     color: #858c82;
 }
@@ -249,13 +251,14 @@ h2 {
 }
 
 .hero-date {
-    font-size: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
     font-weight: 500;
-    letter-spacing: 5px;
+    font-style: italic;
+    letter-spacing: 3px;
 
     color: #555d52;
 }
-
 
 /* =========================================================
    SCROLL
@@ -334,13 +337,16 @@ h2 {
 /* INVITATION TEXT */
 
 .invitation-text {
-    max-width: 325px;
-    margin: 0 auto;
+    max-width: 560px;
+    margin: 0 auto 40px;
 
-    font-size: 12px;
+    font-family: 'Onest', sans-serif;
+    font-size: 15px;
     line-height: 2;
+    font-weight: 500;
+    font-style: italic;
 
-    color: #858b83;
+    color: #858c82;
 }
 
 
@@ -352,25 +358,32 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 14px;
 
     margin-top: 32px;
-
     white-space: nowrap;
 
-    color: #596154;
-}
-
-.invitation-date > span {
     font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
     font-style: italic;
 
-    font-size: 35px;
+    color: #555d52;
+}
+
+.invitation-date > span,
+.invitation-date small,
+.invitation-date strong {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
     line-height: 1;
     font-weight: 500;
+    font-style: italic;
 
-    color: #aa9a6e;
+    color: #555d52;
 }
 
 .invitation-date > div {
@@ -380,26 +393,12 @@ h2 {
 }
 
 .invitation-date small {
-    font-family: 'Montserrat', sans-serif;
-
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 3px;
-
-    color: #858c82;
+    letter-spacing: 2px;
 }
 
 .invitation-date strong {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 29px;
-    line-height: 1;
-    font-weight: 500;
-
-    color: #4f5950;
+    letter-spacing: 0;
 }
-
-
 /* =========================================================
    COUNTDOWN
 ========================================================= */
@@ -1252,4 +1251,50 @@ h2 {
 .section-label {
     font-family: 'Onest', sans-serif;
     font-weight: 500;
+}
+/* =========================================================
+   INVITATION DATE — FINAL
+========================================================= */
+
+.invitation-date {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+
+    margin-top: 32px !important;
+    white-space: nowrap !important;
+
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+
+    color: #555d52 !important;
+}
+
+.invitation-date > span,
+.invitation-date small,
+.invitation-date strong {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 24px !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    letter-spacing: 0 !important;
+
+    color: #555d52 !important;
+}
+
+.invitation-date > div {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.invitation-date small {
+    text-transform: none !important;
 }
